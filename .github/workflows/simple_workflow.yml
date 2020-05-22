@@ -3,20 +3,20 @@ name: C/C++ CI
 on: [push]
 
 jobs:
-  # build-ubuntu:
-
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - uses: actions/checkout@v1
-  #     - name: configure
-  #       run: mkdir build && cd build && cmake ..
-  #     - name: build
-  #       run: cd build && make && make install
-  #     - name: test
-  #       run: cd build && chmod 775 main && ./main
-  
   build-ubuntu:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: configure
+        run: mkdir build && cd build && cmake ..
+      - name: build
+        run: cd build && make && make install
+      - name: test
+        run: cd /usr/local/bin/ && ./main
+  
+  build-macos:
 
     runs-on: macos-latest
 
