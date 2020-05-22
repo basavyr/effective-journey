@@ -259,11 +259,11 @@ jobs:
         config:
         - {
             name: "Windows Latest MSVC", artifact: "Windows-MSVC.tar.xz",
-            os: ubuntu-latest
+            os: windows
           }
         - {
             name: "Windows Latest MinGW", artifact: "Windows-MinGW.tar.xz",
-            os: ubuntu-latest
+            os: windows
           }
         - {
             name: "Ubuntu Latest GCC", artifact: "Linux.tar.xz",
@@ -271,7 +271,7 @@ jobs:
           }
         - {
             name: "macOS Latest Clang", artifact: "macOS.tar.xz",
-            os: ubuntu-latest
+            os: macos-latest
           }
     needs: release
 
