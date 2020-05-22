@@ -4,7 +4,7 @@ set (project_name "Github-Action-Test")
 
 project(${project_name})
 
-add_executable(main main.cc)
+add_executable(main src/main.cc)
 
 install(TARGETS main)
 
