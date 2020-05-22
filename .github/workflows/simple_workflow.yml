@@ -3,7 +3,6 @@ name: C/C++ CI
 on: [push]
 
 jobs:
-
   build-ubuntu: #test build for ubuntu
     runs-on: ubuntu-latest
 
@@ -16,7 +15,7 @@ jobs:
       - name: test
         run: cd tarball/build/bin/ && ./main
 
-  build-macos:  #test build for mac-os
+  build-macos: #test build for mac-os
     runs-on: macos-latest
 
     steps:
@@ -29,9 +28,7 @@ jobs:
         run: cd tarball/build/bin/ && ./main
       - name: make-installer
         run: tar -zcvf macos-build.tar.gz tarball
-
-    - uses: actions/upload-artifact@v2
-      with:
+      - uses: actions/upload-artifact@v2
+        with:
           name: artifact-build
           path: macos-build.tar.gz
-
