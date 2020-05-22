@@ -11,6 +11,6 @@ jobs:
       - name: configure
         run: mkdir build && cd build && cmake ..
       - name: build
-        run: make && make install
+        run: cd build && make && make install
       - name: test
-        run: chmod 775 main && ./main
+        run: cd build && chmod 775 main && ./main
