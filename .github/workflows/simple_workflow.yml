@@ -27,3 +27,11 @@ jobs:
         run: cd build && make && make install
       - name: test
         run: cd tarball/build/bin/ && ./main
+      - name: make-installer
+        run: tar -zcvf macos-build.tar.gz tarball
+
+    - uses: actions/upload-artifact@v2
+      with:
+          name: artifact-build
+          path: macos-build.tar.gz
+
